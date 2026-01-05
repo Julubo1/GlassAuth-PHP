@@ -1,0 +1,45 @@
+/* public/style.css */
+
+/* Fonts importeren (als je ze niet in de <head> wilt zetten) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #FAFAFA;
+}
+
+/* --- Glassmorphism Card --- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px); /* Voor Safari */
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* --- Blob Animaties --- */
+.blob {
+    position: absolute;
+    filter: blur(80px);
+    opacity: 0.6;
+    z-index: -1;
+    animation: float 10s infinite ease-in-out;
+}
+
+/* Zorgt dat de blobs mooi heen en weer zweven */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.05);
+    }
+}
+
+/* --- Input Focus Styling (Voor de Tailwind inputs) --- */
+/* Zorgt dat de focus ring past bij je huisstijl (optioneel) */
+input:focus {
+    outline: none;
+    border-color: #8FBC8F; /* Matcha Green */
+    box-shadow: 0 0 0 3px rgba(143, 188, 143, 0.2);
+}
